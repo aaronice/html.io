@@ -1,0 +1,66 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Google Visualization API Sample</title>
+  <script type="text/javascript" src="//www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load('visualization', '1', {packages: ['geochart']});
+
+    function drawVisualization() {
+      var data = google.visualization.arrayToDataTable([
+        ['Country', 'Number of Students'],
+        ['Sweden', 18],
+        ['Germany', 2],
+        ['United States', 4],
+        ['Hungary', 1],
+        ['France', 1],
+        ['Ireland', 1],
+        ['Iran',1],
+        ['Australia', 2],
+        ['Venezuela', 1],
+        ['United Kingdom', 3],
+        ['China', 4],
+        ['Czech Republic', 1],
+        ['Taiwan', 1],
+        ['Spain', 1],
+        ['Myanmar', 1],
+        ['Slovenia', 1],
+        ['Greece', 1],
+        ['Ukraine', 1],
+        ['Lithuania', 1],
+        ['Austria', 1],
+        ['Holland', 1],
+        ['Russia', 2]
+      ]);
+    
+      
+      var options = { colorAxis: {colors: ['lightgreen','green']},
+                      sizeAxis: {
+                        minSize: 10,
+                        maxSize: 20
+                      },
+                      width: 800, height: 600,
+                      //displayMode: 'text',
+                      
+                     };
+      
+      var geochart = new google.visualization.GeoChart(
+          document.getElementById('visualization'));
+      geochart.draw(data, options);
+    }
+    
+
+    google.setOnLoadCallback(drawVisualization);
+  </script>
+</head>
+<body style="font-family: Arial;border: 0 none;">
+<div id="visualization"></div>
+</body>
+</html>
+​
